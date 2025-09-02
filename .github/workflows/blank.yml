@@ -1,0 +1,57 @@
+name: gitCI
+
+on:
+  push:
+    branches: 
+      - main
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  job1:
+    runs-on: self-hosted
+    steps:
+      - name: My first job
+        run: echo "my first job"
+
+  job3:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: Azure/login@v2.3.0
+        with:
+          client-id: 030f5525-19e4-4f7b-a8e3-fafc82b9d306
+          tenant-id: df7d1ae3-5176-4f7e-914b-b0fbb8b85c9f
+          subscription-id: 74282b2c-f351-49d2-8fc1-345ec077bafb
+
+  job4:
+    runs-on: self-hosted
+    needs: job3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.3
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: .
+
+      - name: Terraform Plan
+        run: terraform plan
+        working-directory: .
+
+  job5:
+    runs-on: ubuntu-latest
+    needs: job4
+    steps:
+      - name: Approve Workflow [Manual]
+        run: echo Approve Workflow [Manual]
