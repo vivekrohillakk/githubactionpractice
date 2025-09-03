@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
   id-token: write
 
 jobs:
@@ -16,6 +16,15 @@ jobs:
       - name: My first job
         run: echo "my first job"
 
+
+  job2:
+    runs-on: self-hosted
+    steps :
+       - name: Install Terraform
+      
+         uses: little-core-labs/install-terraform@v2.0.0
+   
+          
   job3:
     runs-on: self-hosted
     steps:
