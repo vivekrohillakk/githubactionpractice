@@ -52,11 +52,11 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        # working-directory: .
+        working-directory: .
 
       - name: Terraform Plan
         run: terraform plan
-        # working-directory: .
+        working-directory: .
 
   # job5:
   #   runs-on: ubuntu-latest
