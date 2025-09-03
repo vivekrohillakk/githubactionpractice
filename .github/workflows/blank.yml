@@ -49,9 +49,9 @@ jobs:
         run: terraform plan
         working-directory: .
 
-  job5:
-    runs-on: ubuntu-latest
-    needs: job4
-    steps:
-      - name: Approve Workflow [Manual]
-        run: echo Approve Workflow [Manual]
+  # job5:
+  #   runs-on: ubuntu-latest
+  #   needs: job4
+  #   steps:
+  #     - name: Approve Workflow [Manual]
+  #       run: echo Approve Workflow [Manual]
