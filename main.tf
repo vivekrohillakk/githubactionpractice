@@ -12,7 +12,7 @@ terraform {
     container_name       = "pardeepcontainertest"                              
     key                  = "vivek.terraform.tfstate"               
 }
-
+}
 
 provider "azurerm" {
   features {}
