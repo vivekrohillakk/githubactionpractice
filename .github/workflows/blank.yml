@@ -38,10 +38,8 @@ jobs:
           tenant-id: df7d1ae3-5176-4f7e-914b-b0fbb8b85c9f
           subscription-id: 74282b2c-f351-49d2-8fc1-345ec077bafb
 
-  job4:
-    runs-on: self-hosted
-    needs: job3
-    steps:
+  
+    
       - name: Checkout repository
         uses: actions/checkout@v5
 
