@@ -7,17 +7,16 @@ terraform {
   }
   backend "azurerm" {
     
-    resource_group_name = "pardeeptestrg"              # Can also be set via `ARM_CLIENT_ID` environment variable.
-    storage_account_name = "pardeeptestsg"                              # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
-    container_name       = "pardeepcontainertest"                               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    key                  = "vivek.terraform.tfstate"                # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-  }
+    resource_group_name = "pardeeptestrg"             
+    storage_account_name = "pardeeptestsg"                             
+    container_name       = "pardeepcontainertest"                              
+    key                  = "vivek.terraform.tfstate"               
 }
 
 
 provider "azurerm" {
   features {}
-  subscription_id = "74282b2c-f351-49d2-8fc1-345ec077bafb"
+  
 }
 
 
