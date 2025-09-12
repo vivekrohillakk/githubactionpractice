@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">3.0"
+      version = "1.63"
     }
   }
   backend "azurerm" {
@@ -16,11 +16,11 @@ terraform {
 
 provider "azurerm" {
   features {}
-  
+  subscription_id = "74282b2c-f351-49d2-8fc1-345ec077bafb"
 }
 
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "rgvivek" {
   name     = "rg-storage-demo"
   location = "East US"
 }
